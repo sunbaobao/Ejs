@@ -31,11 +31,13 @@ app.use(session({
     key: settings.db,//cookie name
     cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},//30 days
     store: new MongoStore({
-        db: settings.db,
+        /* db: settings.db,
         host: settings.host,
-        port: settings.port,
+         port: settings.port,*/
         url: 'mongodb://localhost/blog'
-    })
+    }),
+    resave: false,
+    saveUninitialized: true
 }));
 
 app.use('/', routes);
@@ -58,7 +60,7 @@ if (app.get('env') === 'development') {
         res.render('error', {
             message: err.message,
             error: err
-        });
+        });     
     });
 }
 

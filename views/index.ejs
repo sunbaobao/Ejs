@@ -1,9 +1,11 @@
 <% include header %>
 <% posts.forEach(function (post, index) { %>
 <p><h2><a href="#"><%= post.title %></a></h2></p>
+<% var date = post.time %>
 <p class="info">
 	作者：<a href="#"><%= post.name %></a> |
-	日期：<%= post.time.minute %>
+	日期：<%= date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +
+	date.getHours() + ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes():date.getMinutes()) %>
 </p>
 <p><%- post.post %></p>
 <% }) %>
