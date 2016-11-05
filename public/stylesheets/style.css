@@ -62,3 +62,14 @@ article a:hover {
 .info {
     font-size: 14px;
 }
+
+.post {
+    width: 800px;
+    height: 300px;
+    margin: 10px 0;
+    border: 2px solid #eeeeee;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}

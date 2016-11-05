@@ -7,11 +7,9 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var flash = require('connect-flash');
-
 var routes = require('./routes/index');
 var settings = require('./settings');
 var users = require('./routes/users');
-
 var app = express();
 
 // view engine setup
